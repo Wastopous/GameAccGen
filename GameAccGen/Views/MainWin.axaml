@@ -1,0 +1,262 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:GameAccGen.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="GameAccGen.Views.MainWin"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/GAG.png"
+        Title="GameAccGen"
+        Width="1000"
+        Height="700">
+    <Window.Styles>
+        <Style Selector="Button.underline">
+            <Style Selector="^ AccessText">
+                <Setter
+                    Property="TextDecorations"
+                    Value="Underline" />
+            </Style>
+        </Style>
+    </Window.Styles>
+    <Grid Background="#000000">
+        <!--Login-->
+        <Panel 
+            Name="LoginPanel"
+            Background="#000000"
+            IsVisible="True"
+            Height="430"
+            Width="700">
+            <Image
+                Source="/Assets/GAG.png"
+                Width="70"
+                Height="70"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="10 10 0 0">
+            </Image>
+            <TextBlock
+                Text="GameAccGen"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="80 30 0 0"
+                FontWeight="Bold"
+                FontFamily="Motiva Sans"
+                FontSize="20"
+                Foreground="White"
+                Background="#000000">
+            </TextBlock>
+            <TextBlock
+                Text="ВОЙДИТЕ С ПОМОЩЬЮ ЛОГИНА"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0  0 0 100"
+                FontFamily="Motiva Sans"
+                FontSize="16"
+                Foreground="#1d99ff">
+            </TextBlock>
+            <TextBox
+                Name="Login"
+                Watermark="Логин"
+                HorizontalContentAlignment="Center"
+                FontFamily="Motiva Sans"
+                Foreground="White"
+                Height="40"
+                Width="200"
+                MaxWidth="250"
+                Background="#393c44"
+                VerticalContentAlignment="Center"
+                KeyDown="Login_OnKeyDown">
+            </TextBox>
+            <TextBox
+                Name="Password"
+                Watermark="Пароль"
+                HorizontalContentAlignment="Center"
+                FontFamily="Motiva Sans"
+                Margin="0 90 0 0"
+                Foreground="White"
+                Height="40"
+                Width="200"
+                MaxWidth="250"
+                Background="#393c44"
+                VerticalContentAlignment="Center">
+            </TextBox>
+            <Button
+                Name="LoginButton"
+                Height="50"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                VerticalAlignment="Bottom"
+                Content="Войти"
+                Foreground="White"
+                FontFamily="Motiva Sans"
+                FontSize="18"
+                HorizontalAlignment="Center"
+                Width="200"
+                Margin="0 0 0 95"
+                Background="#208cff"
+                Click="LoginButton_OnClick">
+            </Button>
+            <Button
+                Name="RegButton"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Content="Впервые тут?"
+                Background="Transparent"
+                Foreground="White"
+                Margin="0 0 0 70"
+                FontFamily="Motiva Sans"
+                Classes="underline"
+                FontSize="13"
+                Click="RegButton_OnClick">
+            </Button>
+        </Panel>
+        <!--Registration-->
+        <Panel
+            Name="RegPanel"
+            IsVisible="False"
+            Width="800"
+            Height="600">
+            <TextBlock
+                Margin="0 10 0 0"
+                HorizontalAlignment="Center"
+                Text="РЕГИСТРАЦИЯ"
+                FontWeight="UltraLight"
+                FontFamily="Motiva Sans"
+                FontSize="30"
+                Foreground="#ffffff">
+            </TextBlock>
+            <TextBlock
+                Name="LoginBlock"
+                Margin="0 55 80 0"
+                HorizontalAlignment="Center"
+                Text="Введите свой логин*"
+                FontWeight="UltraLight"
+                FontFamily="Motiva Sans"
+                FontSize="17"
+                Foreground="#1d99ff">
+            </TextBlock>
+            <TextBox
+                Name="LoginTextBox"
+                FontFamily="Motiva Sans"
+                Margin="0 0 0 400"
+                Foreground="White"
+                Height="40"
+                Width="250"
+                Background="#393c44"
+                VerticalContentAlignment="Center">
+            </TextBox>
+            <TextBlock
+                Name="NameBlock"
+                Margin="0 120 100 0"
+                HorizontalAlignment="Center"
+                Text="Введите своё имя"
+                FontWeight="UltraLight"
+                FontFamily="Motiva Sans"
+                FontSize="17"
+                Foreground="#1d99ff">
+            </TextBlock>
+            <TextBox
+                Name="NameTextBox"
+                FontFamily="Motiva Sans"
+                Margin="0 0 0 270"
+                Foreground="White"
+                Height="40"
+                Width="250"
+                Background="#393c44"
+                VerticalContentAlignment="Center">
+            </TextBox>
+            <TextBlock
+                Name="SurBlock"
+                Margin="0 185 50 0"
+                HorizontalAlignment="Center"
+                Text="Введите свою фамилию"
+                FontWeight="UltraLight"
+                FontFamily="Motiva Sans"
+                FontSize="17"
+                Foreground="#1d99ff">
+            </TextBlock>
+            <TextBox
+                Name="SurNameTextBox"
+                FontFamily="Motiva Sans"
+                Margin="0 30 0 170"
+                Foreground="White"
+                Height="40"
+                Width="250"
+                Background="#393c44"
+                VerticalContentAlignment="Center">
+            </TextBox>
+            <TextBlock
+                Name="MidNameBlock"
+                Margin="0 255 15 0"
+                HorizontalAlignment="Center"
+                Text="Введите свою дату рождения"
+                FontWeight="UltraLight"
+                FontFamily="Motiva Sans"
+                FontSize="17"
+                Foreground="#1d99ff">
+            </TextBlock>
+            <DatePicker
+                Name="BirthPicker"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0 150 0 150 "
+                FontWeight="UltraLight"
+                FontFamily="Motiva Sans"
+                Width="250">
+            </DatePicker>
+            <TextBlock
+                Name="CodeBlock"
+                Margin="0 320 140 0"
+                HorizontalAlignment="Center"
+                Text="Введите код"
+                ZIndex="1"
+                FontWeight="UltraLight"
+                FontFamily="Motiva Sans"
+                FontSize="17"
+                Foreground="#1d99ff">
+            </TextBlock>
+            <TextBox
+                Name="CodeTextBox"
+                FontFamily="Motiva Sans"
+                Margin="0 130 0 0"
+                Foreground="White"
+                Height="40"
+                Width="250"
+                Background="#393c44"
+                VerticalContentAlignment="Center">
+            </TextBox>
+            <Button
+                Name="SignInButton"
+                Content="ЗАРЕГИСТРИРОВАТЬСЯ"
+                Height="50"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Foreground="White"
+                FontFamily="Motiva Sans"
+                FontSize="18"
+                HorizontalAlignment="Center"
+                Width="250" Margin="0 200 0 -100"
+                Background="#208cff"
+                Click="SignInButton_OnClick">
+            </Button>
+            <Button
+                Name="BackButton"
+                HorizontalAlignment="Center"
+                Content="Уже зарегестрирован"
+                Background="Transparent"
+                Margin="0 220 0 0"
+                FontFamily="Motiva Sans"
+                Classes="underline"
+                FontSize="13"
+                Click="BackButton_OnClick">
+            </Button>
+        </Panel>
+        <!--Main-->
+        <Panel 
+            Name="MainPanel"
+            IsVisible="False">
+            
+        </Panel>
+    </Grid>
+</Window>

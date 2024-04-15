@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameAccGen", "GameAccGen\GameAccGen.csproj", "{0DD9621E-FC39-4C94-B409-3062FD283C8C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DD9621E-FC39-4C94-B409-3062FD283C8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DD9621E-FC39-4C94-B409-3062FD283C8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DD9621E-FC39-4C94-B409-3062FD283C8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DD9621E-FC39-4C94-B409-3062FD283C8C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
