@@ -272,18 +272,66 @@
                 FontWeight="Bold"
                 FontFamily="Motiva Sans"
                 FontSize="13"
-                Foreground="White"
+                Foreground="#188EE3"
                 Background="#000000">
             </TextBlock>
             <Button
+                Name="BackToLoginButton"
                 Background="Transparent"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Margin="15 15 0 0"
                 Height="30"
                 Width="120"
-                Click="Button_OnClick">
+                Click="BackToLoginButton_OnClick">
             </Button>
+            <TabControl
+                HorizontalAlignment="Left"
+                Margin="150 5 0 0">
+                <!--библиотека-->
+                <TabItem
+                    Name="LibItem"
+                    Header="БИБЛИОТЕКА АККАУНТОВ"
+                    HorizontalContentAlignment="Center"
+                    FontFamily="Motiva Sans"
+                    FontWeight="Bold"
+                    FontSize="14"
+                    Background="#000000">
+                    <TabItem.Styles>
+                        <Style Selector="TabItem:selected">
+                            <Setter Property="Foreground" Value="#188EE3"></Setter>
+                        </Style>
+                    </TabItem.Styles>
+                </TabItem>
+                <TabItem
+                    Name="AddAnoAccItem"
+                    Header="СОЗДАТЬ АККАУНТ"
+                    HorizontalContentAlignment="Center"
+                    FontFamily="Motiva Sans"
+                    FontWeight="Bold"
+                    FontSize="14"
+                    Background="#000000">
+                    <TabItem.Styles>
+                        <Style Selector="TabItem:selected">
+                            <Setter Property="Foreground" Value="#188EE3"></Setter>
+                        </Style>
+                    </TabItem.Styles>
+                </TabItem>
+                <TabItem
+                    Name="AddAccItem"
+                    Header="ДОБАВИТЬ СТОРОННИЙ АККАУНТ"
+                    HorizontalContentAlignment="Center"
+                    FontFamily="Motiva Sans"
+                    FontWeight="Bold"
+                    FontSize="14"
+                    Background="#000000">
+                    <TabItem.Styles>
+                        <Style Selector="TabItem:selected">
+                            <Setter Property="Foreground" Value="#188EE3"></Setter>
+                        </Style>
+                    </TabItem.Styles>
+                </TabItem>
+            </TabControl>
         </Panel>
     </Grid>
 </Window>
