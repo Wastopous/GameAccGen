@@ -272,7 +272,7 @@
                 FontWeight="Bold"
                 FontFamily="Motiva Sans"
                 FontSize="13"
-                Foreground="#188EE3"
+                Foreground="White"
                 Background="#000000">
             </TextBlock>
             <Button

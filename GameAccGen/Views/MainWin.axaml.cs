@@ -93,33 +93,35 @@ public partial class MainWin : Window
 
     private void LoginButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        string sql = "SELECT COUNT(*) FROM user WHERE Login = @login AND PinCode = @pincode";
-
-        using (var con = new MySqlConnection(_ConnectionSB.ConnectionString))
-        {
-            con.Open();
-            using (var com = con.CreateCommand())
-            {
-                com.CommandText = sql;
-                com.Parameters.AddWithValue("@login", LoginTextBox);
-                com.Parameters.AddWithValue("@pincode", CodeTextBox);
-
-                int count = Convert.ToInt32(com.ExecuteScalar());
-
-                if (count > 0)
-                {
-                    LoginPanel.IsVisible = false;
-                    MainPanel.IsVisible = true;
-                }
-                else
-                {
-                    // Пользователь не найден или введены неверные данные
-                    // Обработайте этот случай соответственно
-                }
-            }
-
-            con.Close();
-        }
+        // string sql = "SELECT COUNT(*) FROM user WHERE Login = @login AND PinCode = @pincode";
+        //
+        // using (var con = new MySqlConnection(_ConnectionSB.ConnectionString))
+        // {
+        //     con.Open();
+        //     using (var com = con.CreateCommand())
+        //     {
+        //         com.CommandText = sql;
+        //         com.Parameters.AddWithValue("@login", LoginTextBox);
+        //         com.Parameters.AddWithValue("@pincode", CodeTextBox);
+        //
+        //         int count = Convert.ToInt32(com.ExecuteScalar());
+        //
+        //         if (count > 0)
+        //         {
+        //             LoginPanel.IsVisible = false;
+        //             MainPanel.IsVisible = true;
+        //         }
+        //         else
+        //         {
+        //             // Пользователь не найден или введены неверные данные
+        //             // Обработайте этот случай соответственно
+        //         }
+        //     }
+        //
+        //     con.Close();
+        // }
+        LoginPanel.IsVisible = false;
+        MainPanel.IsVisible = true;
     }
 
 
