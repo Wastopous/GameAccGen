@@ -21,10 +21,10 @@
     </Window.Styles>
     <Grid Background="#000000">
         <!--Login-->
-        <Panel 
+        <Panel
             Name="LoginPanel"
             Background="#000000"
-            IsVisible="True"
+            IsVisible="False"
             Height="430"
             Width="700">
             <Image
@@ -104,7 +104,7 @@
                 Content="Впервые тут?"
                 Background="Transparent"
                 Foreground="White"
-                Margin="0 0 0 70"
+                Margin="0 0 0 65"
                 FontFamily="Motiva Sans"
                 Classes="underline"
                 FontSize="13"
@@ -253,10 +253,37 @@
             </Button>
         </Panel>
         <!--Main-->
-        <Panel 
+        <Panel
             Name="MainPanel"
-            IsVisible="False">
-            
+            IsVisible="True">
+            <Image
+                Source="/Assets/GAG.png"
+                Width="40"
+                Height="40"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="10 10 0 0">
+            </Image>
+            <TextBlock
+                Text="GameAccGen"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="50 20 0 0"
+                FontWeight="Bold"
+                FontFamily="Motiva Sans"
+                FontSize="13"
+                Foreground="White"
+                Background="#000000">
+            </TextBlock>
+            <Button
+                Background="Transparent"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="15 15 0 0"
+                Height="30"
+                Width="120"
+                Click="Button_OnClick">
+            </Button>
         </Panel>
     </Grid>
 </Window>
