@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="GameAccGen/App.axaml" value="GameAccGen/GameAccGen.csproj" />
+        <entry key="GameAccGen/Views/LoginUC.axaml" value="GameAccGen/GameAccGen.csproj" />
+        <entry key="GameAccGen/Views/MainWin.axaml" value="GameAccGen/GameAccGen.csproj" />
+        <entry key="GameAccGen/Views/MainWindow.axaml" value="GameAccGen/GameAccGen.csproj" />
+        <entry key="GameAccGen/Views/RegUC.axaml" value="GameAccGen/GameAccGen.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

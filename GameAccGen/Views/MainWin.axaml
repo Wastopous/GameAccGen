@@ -3,13 +3,16 @@
         xmlns:vm="using:GameAccGen.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d"
+        d:DesignWidth="1000"
+        d:DesignHeight="700"
         x:Class="GameAccGen.Views.MainWin"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/GAG.png"
         Title="GameAccGen"
         Width="1000"
-        Height="700">
+        Height="700"
+        CanResize="False">
     <Window.Styles>
         <Style Selector="Button.underline">
             <Style Selector="^ AccessText">
@@ -286,6 +289,7 @@
                 Click="BackToLoginButton_OnClick">
             </Button>
             <TabControl
+                
                 HorizontalAlignment="Left"
                 Margin="150 5 0 0">
                 <!--библиотека-->
@@ -303,6 +307,7 @@
                         </Style>
                     </TabItem.Styles>
                 </TabItem>
+                <!--добавить местный аккаунт-->
                 <TabItem
                     Name="AddAnoAccItem"
                     Header="СОЗДАТЬ АККАУНТ"
@@ -317,6 +322,7 @@
                         </Style>
                     </TabItem.Styles>
                 </TabItem>
+                <!--добавить аккаунт с другого-->
                 <TabItem
                     Name="AddAccItem"
                     Header="ДОБАВИТЬ СТОРОННИЙ АККАУНТ"
@@ -330,6 +336,62 @@
                             <Setter Property="Foreground" Value="#188EE3"></Setter>
                         </Style>
                     </TabItem.Styles>
+                <Panel>
+                    <TextBlock
+                        Name="LoginAnoAcc"
+                        Margin="0 55 80 0"
+                        HorizontalAlignment="Center"
+                        Text="Введите свой логин"
+                        FontWeight="UltraLight"
+                        FontFamily="Motiva Sans"
+                        FontSize="17"
+                        Foreground="#1d99ff">
+                    </TextBlock>
+                    <TextBox
+                        Name="LoginAcoTextBox"
+                        FontFamily="Motiva Sans"
+                        Margin="0 0 0 450"
+                        Foreground="White"
+                        Height="40"
+                        Width="250"
+                        Background="#393c44"
+                        VerticalContentAlignment="Center">
+                    </TextBox>
+                    <TextBlock
+                        Name="PassAnoAcc"
+                        Margin="0 125 80 0"
+                        HorizontalAlignment="Center"
+                        Text="Введите свой пароль"
+                        FontWeight="UltraLight"
+                        FontFamily="Motiva Sans"
+                        FontSize="17"
+                        Foreground="#1d99ff">
+                    </TextBlock>
+                    <TextBox
+                        Name="PassAcoTextBox"
+                        FontFamily="Motiva Sans"
+                        Margin="0 100 0 400"
+                        Foreground="White"
+                        Height="40"
+                        Width="250"
+                        Background="#393c44"
+                        VerticalContentAlignment="Center">
+                    </TextBox>
+                    <Button
+                        Name="AddAnoAccButton"
+                        Content="ЗАРЕГИСТРИРОВАТЬ"
+                        Height="50"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Foreground="White"
+                        FontFamily="Motiva Sans"
+                        FontSize="18"
+                        HorizontalAlignment="Center"
+                        Width="250" Margin="0 00 0 180"
+                        Background="#208cff"
+                        >
+                    </Button>
+                </Panel>
                 </TabItem>
             </TabControl>
         </Panel>
