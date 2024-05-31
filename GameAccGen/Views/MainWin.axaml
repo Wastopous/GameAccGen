@@ -306,6 +306,9 @@
                             <Setter Property="Foreground" Value="#188EE3"></Setter>
                         </Style>
                     </TabItem.Styles>
+                    <DataGrid 
+                        Name="AccGrid">
+                    </DataGrid>
                 </TabItem>
                 <!--добавить местный аккаунт-->
                 <TabItem
@@ -338,8 +341,28 @@
                     </TabItem.Styles>
                 <Panel>
                     <TextBlock
-                        Name="LoginAnoAcc"
+                        Name="PlatformAnoAcc"
                         Margin="0 55 80 0"
+                        HorizontalAlignment="Center"
+                        Text="Введите платформу"
+                        FontWeight="UltraLight"
+                        FontFamily="Motiva Sans"
+                        FontSize="17"
+                        Foreground="#1d99ff">
+                    </TextBlock>
+                    <TextBox
+                        Name="PlatformAnoTextBox"
+                        FontFamily="Motiva Sans"
+                        Margin="0 0 0 450"
+                        Foreground="White"
+                        Height="40"
+                        Width="250"
+                        Background="#393c44"
+                        VerticalContentAlignment="Center">
+                    </TextBox>
+                    <TextBlock
+                        Name="LoginAnoAcc"
+                        Margin="0 125 80 0"
                         HorizontalAlignment="Center"
                         Text="Введите свой логин"
                         FontWeight="UltraLight"
@@ -350,7 +373,7 @@
                     <TextBox
                         Name="LoginAcoTextBox"
                         FontFamily="Motiva Sans"
-                        Margin="0 0 0 450"
+                        Margin="0 140 0 450"
                         Foreground="White"
                         Height="40"
                         Width="250"
@@ -359,7 +382,7 @@
                     </TextBox>
                     <TextBlock
                         Name="PassAnoAcc"
-                        Margin="0 125 80 0"
+                        Margin="0 195 80 0"
                         HorizontalAlignment="Center"
                         Text="Введите свой пароль"
                         FontWeight="UltraLight"
@@ -370,7 +393,7 @@
                     <TextBox
                         Name="PassAcoTextBox"
                         FontFamily="Motiva Sans"
-                        Margin="0 100 0 400"
+                        Margin="0 230 0 400"
                         Foreground="White"
                         Height="40"
                         Width="250"
@@ -387,7 +410,7 @@
                         FontFamily="Motiva Sans"
                         FontSize="18"
                         HorizontalAlignment="Center"
-                        Width="250" Margin="0 00 0 180"
+                        Width="250" Margin="0 00 0 60"
                         Background="#208cff"
                         >
                     </Button>

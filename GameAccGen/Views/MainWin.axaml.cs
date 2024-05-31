@@ -23,14 +23,7 @@ public partial class MainWin : Window
             UserID = "root",
             Password = "1234",
         };
-        // if (Login.Text == null || Password.Text == null)
-        // {
-        //     LoginButton.IsEnabled = false;
-        // }
-        // else
-        // {
-        //     LoginButton.IsEnabled = true;
-        // }
+
     }
 
     #region RegPanel
