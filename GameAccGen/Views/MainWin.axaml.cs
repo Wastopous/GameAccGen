@@ -17,7 +17,7 @@ public partial class MainWin : Window
     
 
     public MainWin()
-    {
+    { 
         InitializeComponent();
         _ConnectionSB = new MySqlConnectionStringBuilder
         {
