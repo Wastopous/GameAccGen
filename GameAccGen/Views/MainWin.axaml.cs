@@ -35,7 +35,7 @@ public partial class MainWin : Window
         using (var con = new MySqlConnection(_ConnectionSB.ConnectionString))
         {
             con.Open();
-            {
+            { 
                 using (var com = con.CreateCommand())
                 {
                     com.CommandText = sql;
