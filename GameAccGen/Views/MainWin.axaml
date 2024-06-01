@@ -50,6 +50,7 @@
                 Background="#000000">
             </TextBlock>
             <TextBlock
+                Name="Block"
                 Text="ВОЙДИТЕ С ПОМОЩЬЮ ЛОГИНА"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
@@ -307,7 +308,14 @@
                         </Style>
                     </TabItem.Styles>
                     <DataGrid 
-                        Name="AccGrid">
+                        Name="AccGrid"
+                        AutoGenerateColumns="False"
+                        x:CompileBindings="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Платформа" Binding="{Binding AccPlatform}" />
+                            <DataGridTextColumn Header="Логин" Binding="{Binding AccLogin}" />
+                            <DataGridTextColumn Header="Пароль" Binding="{Binding AccPassword}" />
+                        </DataGrid.Columns>
                     </DataGrid>
                 </TabItem>
                 <!--добавить местный аккаунт-->
@@ -412,6 +420,7 @@
                         HorizontalAlignment="Center"
                         Width="250" Margin="0 00 0 60"
                         Background="#208cff"
+                        Click="AddAnoAccButton_OnClick"
                         >
                     </Button>
                 </Panel>

@@ -5,6 +5,7 @@ using Avalonia.Controls;
 using Avalonia.Data.Converters;
 using Avalonia.Input;
 using Avalonia.Interactivity;
+using GameAccGen.Models;
 using MySqlConnector;
 
 namespace GameAccGen.Views;
@@ -12,6 +13,8 @@ namespace GameAccGen.Views;
 public partial class MainWin : Window
 {
     public MySqlConnectionStringBuilder _ConnectionSB;
+    private static int userident;
+    
 
     public MainWin()
     {
@@ -23,7 +26,35 @@ public partial class MainWin : Window
             UserID = "root",
             Password = "1234",
         };
+        FillBibl();
+    }
 
+    public void FillBibl()
+    {
+        string sql = "SELECT User, Platform, AccLogin, AccPassword FROM account;";
+        using (var con = new MySqlConnection(_ConnectionSB.ConnectionString))
+        {
+            con.Open();
+            {
+                using (var com = con.CreateCommand())
+                {
+                    com.CommandText = sql;
+                    using var reader = com.ExecuteReader();
+                    var list = new List<Accountasdkld>();
+                    while (reader.Read()) {
+                        var item = new Accountasdkld();
+                        item.User = reader.GetInt32("User");
+                        item.AccLogin = reader.GetString("AccLogin");
+                        item.AccPlatform = reader.GetString("Platform");
+                        item.AccPassword = reader.GetString("AccPassword");
+                        list.Add(item);
+                    }
+
+                    AccGrid.ItemsSource = list;
+                }
+            }
+            con.Close();
+        }
     }
 
     #region RegPanel
@@ -86,38 +117,36 @@ public partial class MainWin : Window
 
     private void LoginButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        // string sql = "SELECT COUNT(*) FROM user WHERE Login = @login AND PinCode = @pincode";
-        //
-        // using (var con = new MySqlConnection(_ConnectionSB.ConnectionString))
-        // {
-        //     con.Open();
-        //     using (var com = con.CreateCommand())
-        //     {
-        //         com.CommandText = sql;
-        //         com.Parameters.AddWithValue("@login", LoginTextBox);
-        //         com.Parameters.AddWithValue("@pincode", CodeTextBox);
-        //
-        //         int count = Convert.ToInt32(com.ExecuteScalar());
-        //
-        //         if (count > 0)
-        //         {
-        //             LoginPanel.IsVisible = false;
-        //             MainPanel.IsVisible = true;
-        //         }
-        //         else
-        //         {
-        //             // Пользователь не найден или введены неверные данные
-        //             // Обработайте этот случай соответственно
-        //         }
-        //     }
-        //
-        //     con.Close();
-        // }
-        LoginPanel.IsVisible = false;
-        MainPanel.IsVisible = true;
+        string sql = "SELECT UserID, Login, PinCode FROM user WHERE  Login = @login AND PinCode = @pincode";
+        
+        using (var con = new MySqlConnection(_ConnectionSB.ConnectionString))
+        {
+            con.Open();
+            using (var com = con.CreateCommand())
+            {
+                com.CommandText = sql;
+                com.Parameters.AddWithValue("@login", Login.Text);
+                com.Parameters.AddWithValue("@pincode", Password.Text);
+        
+                using var reader =  com.ExecuteReader();
+                while ( reader.Read()) {
+                    var login = reader.GetString("Login");
+                    var pincode = reader.GetInt32("PinCode");
+                    var ID = reader.GetInt32("UserID");
+                    userident = ID;
+                    if (login == Login.Text && pincode.ToString() == Password.Text) {
+                        LoginPanel.IsVisible = false;
+                        MainPanel.IsVisible = true;
+                    }
+                    else
+                    {
+                        Block.Text = "Неверный логин или пароль";
+                    }
+                }
+            }
+            con.Close();
+        }
     }
-
-
     #endregion
 
 
@@ -126,5 +155,29 @@ public partial class MainWin : Window
     {
         MainPanel.IsVisible = false;
         LoginPanel.IsVisible = true;
+    }
+
+    private void AddAnoAccButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        string sql = "INSERT INTO account(User, Platform, AccLogin, AccPassword) VALUES (@user, @platform, @acclogin, @accpassword);";
+
+        
+        using (var con = new MySqlConnection(_ConnectionSB.ConnectionString))
+        {
+            con.Open();
+            {
+                using (var com = con.CreateCommand())
+                {
+                    com.CommandText = sql;
+                    com.Parameters.AddWithValue("@user", userident);
+                    com.Parameters.AddWithValue("@platform", PlatformAnoTextBox.Text);
+                    com.Parameters.AddWithValue("@acclogin", LoginAcoTextBox.Text);
+                    com.Parameters.AddWithValue("@accpassword", PassAcoTextBox.Text);
+                    com.ExecuteNonQuery();
+                }
+            }
+            con.Close();
+        }
+        
     }
 }
