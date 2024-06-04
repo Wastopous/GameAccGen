@@ -12,7 +12,8 @@
         Title="GameAccGen"
         Width="1000"
         Height="700"
-        CanResize="False">
+        CanResize="False"
+        Opened="TopLevel_OnOpened">
     <Window.Styles>
         <Style Selector="Button.underline">
             <Style Selector="^ AccessText">
@@ -60,7 +61,7 @@
                 Foreground="#1d99ff">
             </TextBlock>
             <TextBox
-                Name="Login"
+                Name="LoginField"
                 Watermark="Логин"
                 HorizontalContentAlignment="Center"
                 FontFamily="Motiva Sans"
@@ -73,7 +74,7 @@
                 KeyDown="Login_OnKeyDown">
             </TextBox>
             <TextBox
-                Name="Password"
+                Name="PasswordField"
                 Watermark="Пароль"
                 HorizontalContentAlignment="Center"
                 FontFamily="Motiva Sans"
@@ -332,6 +333,106 @@
                             <Setter Property="Foreground" Value="#188EE3"></Setter>
                         </Style>
                     </TabItem.Styles>
+                    <Panel>
+                    <TextBlock
+                        Name="PlatformMesAcc"
+                        Margin="0 55 80 0"
+                        HorizontalAlignment="Center"
+                        Text="Введите платформу"
+                        FontWeight="UltraLight"
+                        FontFamily="Motiva Sans"
+                        FontSize="17"
+                        Foreground="#1d99ff">
+                    </TextBlock>
+                    <TextBox
+                        Name="PlatformMesTextBox"
+                        FontFamily="Motiva Sans"
+                        Margin="0 0 0 450"
+                        Foreground="White"
+                        Height="40"
+                        Width="250"
+                        Background="#393c44"
+                        VerticalContentAlignment="Center">
+                    </TextBox>
+                    <TextBlock
+                        Name="LoginMesAcc"
+                        Margin="0 125 80 0"
+                        HorizontalAlignment="Center"
+                        Text="Введите свой логин"
+                        FontWeight="UltraLight"
+                        FontFamily="Motiva Sans"
+                        FontSize="17"
+                        Foreground="#1d99ff">
+                    </TextBlock>
+                    <TextBox
+                        Name="LoginMesTextBox"
+                        FontFamily="Motiva Sans"
+                        Margin="0 140 0 450"
+                        Foreground="White"
+                        Height="40"
+                        Width="250"
+                        Background="#393c44"
+                        VerticalContentAlignment="Center">
+                    </TextBox>
+                        <Button
+                            Name="NickMesAcc"
+                            Margin="0 0 0 215"
+                            HorizontalAlignment="Center"
+                            Content="Сгенерируйте никнейм"
+                            FontWeight="UltraLight"
+                            FontFamily="Motiva Sans"
+                            FontSize="17"
+                            Foreground="#1d99ff"
+                            Click="NickMesAcc_OnClick">
+                        </Button>
+                        <TextBox
+                            Name="NickMesTextBox"
+                            FontFamily="Motiva Sans"
+                            Margin="0 0 0 150"
+                            Foreground="White"
+                            Height="40"
+                            Width="250"
+                            Background="#393c44"
+                            VerticalContentAlignment="Center"
+                            KeyDown="NickMesTextBox_OnKeyDown">
+                        </TextBox>
+                    <Button
+                        Name="PassMesAcc"
+                        Margin="0 0 0 75"
+                        HorizontalAlignment="Center"
+                        Content="Сгенерируйте пароль"
+                        FontWeight="UltraLight"
+                        FontFamily="Motiva Sans"
+                        FontSize="17"
+                        Foreground="#1d99ff"
+                        Click="PassMesAcc_OnClick">
+                    </Button>
+                    <TextBox
+                        Name="PassMesTextBox"
+                        FontFamily="Motiva Sans"
+                        Margin="0 0 0 0"
+                        Foreground="White"
+                        Height="40"
+                        Width="250"
+                        Background="#393c44"
+                        VerticalContentAlignment="Center">
+                    </TextBox>
+                    <Button
+                        Name="AddMesAccButton"
+                        Content="СОХРАНИТЬ"
+                        Height="50"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Foreground="White"
+                        FontFamily="Motiva Sans"
+                        FontSize="18"
+                        HorizontalAlignment="Center"
+                        Width="250" Margin="0 100 0 0"
+                        Background="#208cff"
+                        Click="AddMesAccButton_OnClick"
+                        >
+                    </Button>
+                </Panel>
                 </TabItem>
                 <!--добавить аккаунт с другого-->
                 <TabItem
